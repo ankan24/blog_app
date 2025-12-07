@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Light mode token colors */
+  --bg: #ffffff;
+  --text: #111827;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --card: #ffffff;
+}
+
+.dark {
+  /* Dark mode token colors */
+  --bg: #0b1220;
+  --text: #ffffff;
+  --muted: #d1d5db;
+  --border: #374151;
+  --card: #0f1724;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 200ms ease, color 200ms ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Tailwind dark mode helpers (colors are provided via utility classes in components) */
+/* Use the `.dark` class on <html> to toggle dark mode; ThemeProvider manages this. */
