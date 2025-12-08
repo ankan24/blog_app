@@ -7,6 +7,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/contexts/AuthContext";
 import { useTheme } from "@/contexts/ThemeContext";
+import { downloadArticleAsText } from "@/lib/downloadArticle";
 
 export default function AdminPage() {
   const { isAuthenticated, isLoading: authLoading } = useAuth();
@@ -137,6 +138,13 @@ export default function AdminPage() {
                             >
                               Edit
                             </Link>
+                            <button
+                              onClick={() => downloadArticleAsText(article.title, article.content, article.type)}
+                              className="px-4 py-2 bg-green-600 text-white text-sm font-medium rounded hover:bg-green-700 transition"
+                              title="Download as .txt file"
+                            >
+                              Download
+                            </button>
                             {deleteConfirm === ((article as any)._id || (article as any).id) ? (
                               <>
                                 <button

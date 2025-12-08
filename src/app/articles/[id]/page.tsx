@@ -6,6 +6,7 @@ import { ArticleDisplay } from "@/components/ArticleDisplay";
 import Link from "next/link";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useParams } from "next/navigation";
+import { downloadArticleAsText } from "@/lib/downloadArticle";
 
 export default function ArticlePage() {
   const params = useParams() as { id?: string } | null;
@@ -63,12 +64,21 @@ export default function ArticlePage() {
           <>
             <ArticleDisplay article={article} />
             <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-              <Link
-                href="/"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition"
-              >
-                ← Back to Articles
-              </Link>
+              <div className="flex gap-4">
+                <button
+                  onClick={() => downloadArticleAsText(article.title, article.content, article.type)}
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition"
+                  title="Download as .txt file"
+                >
+                  ⬇ Download
+                </button>
+                <Link
+                  href="/"
+                  className="inline-flex items-center gap-2 px-6 py-3 bg-gray-600 text-white font-semibold rounded-lg hover:bg-gray-700 transition"
+                >
+                  ← Back to Articles
+                </Link>
+              </div>
             </div>
           </>
         ) : null}
