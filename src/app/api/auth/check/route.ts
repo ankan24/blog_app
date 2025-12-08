@@ -5,6 +5,9 @@ export async function GET(request: NextRequest) {
   try {
     const token = request.cookies.get("auth-token")?.value;
 
+    // Debug: log whether token was present (helps diagnose missing cookies)
+    console.log("Auth check: token present?", !!token);
+
     if (!token) {
       return NextResponse.json(
         { error: "Not authenticated" },
