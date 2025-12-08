@@ -122,8 +122,7 @@ export default function Home() {
       <footer className="bg-gray-900 text-gray-300 py-8">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <p>
-            Website by Emily Lau • 2025 • Poem content and all text by Emily
-            Lau 2018-2025
+            Website by AG • 2025 • Poem content and all text by Koyel Mondal
           </p>
         </div>
       </footer>
