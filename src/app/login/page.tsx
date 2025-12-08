@@ -91,7 +91,7 @@ export default function LoginPage() {
                 id="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="emily@gmail.com"
+                placeholder="admin@gmail.com"
                 className={`w-full px-4 py-2 rounded-lg border transition focus:outline-none focus:ring-2 focus:ring-indigo-500 ${
                   theme === "dark"
                     ? "bg-gray-700 border-gray-600 text-white placeholder-gray-400"
@@ -140,26 +140,7 @@ export default function LoginPage() {
             </button>
           </form>
 
-          {/* Demo Credentials */}
-          <div
-            className={`mt-6 p-4 rounded-lg ${
-              theme === "dark" ? "bg-gray-700" : "bg-gray-100"
-            }`}
-          >
-            <p
-              className={`text-sm font-semibold mb-2 ${
-                theme === "dark" ? "text-gray-300" : "text-gray-700"
-              }`}
-            >
-              Demo Credentials:
-            </p>
-            <p className={`text-xs ${theme === "dark" ? "text-gray-400" : "text-gray-600"}`}>
-              Email: emily@gmail.com
-              <br />
-              Password: emily123
-            </p>
-          </div>
-
+          
           {/* Back Link */}
           <div className="mt-6 text-center">
             <Link
