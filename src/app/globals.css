@@ -22,12 +22,12 @@ html {
 }
 
 .dark {
-  /* Dark mode token colors */
-  --bg: #0b1220;
+  /* Dark mode token colors - tuned to be much closer to true black */
+  --bg: #000000;
   --text: #ffffff;
-  --muted: #d1d5db;
-  --border: #374151;
-  --card: #0f1724;
+  --muted: #9ca3af;
+  --border: #0b0f13;
+  --card: #050506;
 }
 
 body {
@@ -50,3 +50,13 @@ button {
 
 /* Tailwind dark mode helpers (colors are provided via utility classes in components) */
 /* Use the `.dark` class on <html> to toggle dark mode; ThemeProvider manages this. */
+
+/* Make some Tailwind gray utilities darker in dark mode so components using them look near-black */
+.dark .bg-gray-900 { background-color: #000000 !important; }
+.dark .bg-gray-800 { background-color: #050516 !important; }
+.dark .bg-gray-700 { background-color: #0b0f13 !important; }
+.dark .text-gray-300 { color: #c9d1d9 !important; }
+.dark .text-gray-200 { color: #e6edf3 !important; }
+.dark .text-gray-100 { color: #f5f7fa !important; }
+.dark .border-gray-700 { border-color: #111216 !important; }
+
